@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 import menuRoutes from "./routes/menu";
 import orderRoutes from "./routes/order";
+import authRoutes from "./routes/auth";
+import protectRoutes from "./routes/protect";
 
 const app = express();
 const cors = require("cors");
@@ -25,3 +27,5 @@ app.listen(PORT, () => {
 
 app.use("/menu", menuRoutes);
 app.use("/order", orderRoutes);
+app.use("/auth", authRoutes);
+app.use('/protected', protectRoutes);
